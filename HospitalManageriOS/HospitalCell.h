@@ -10,4 +10,7 @@
 
 @interface HospitalCell : UICollectionViewCell
 
+@property (weak, nonatomic) UIImage *image;
+@property (weak, nonatomic) IBOutlet UILabel *label;
+
 @end

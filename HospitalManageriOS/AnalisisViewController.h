@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AnalisisViewController : UIViewController
+@class ActionsClient;
+@interface AnalisisViewController : UIViewController{
+    ActionsClient *server;
+}
 
 @end

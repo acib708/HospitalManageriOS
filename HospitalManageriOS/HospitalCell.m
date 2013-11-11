@@ -8,10 +8,14 @@
 
 #import "HospitalCell.h"
 
-@implementation HospitalCell
+@interface HospitalCell()
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@end
 
-- (id)initWithFrame:(CGRect)frame
-{
+@implementation HospitalCell
+@synthesize image = _image, label = _label, imageView = _imageView;
+
+- (id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
@@ -19,13 +23,13 @@
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+-(void)setImage:(UIImage *)image{
+    _imageView.image = image;
 }
-*/
+
+-(void)prepareForReuse{
+    [super prepareForReuse];
+    _imageView.image = nil;
+}
 
 @end

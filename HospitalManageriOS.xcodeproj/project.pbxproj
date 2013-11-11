@@ -7,6 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5262A61518305853000F1CFC /* D01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5262A60C18305853000F1CFC /* D01.jpg */; };
+		5262A61618305853000F1CFC /* D02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5262A60D18305853000F1CFC /* D02.jpg */; };
+		5262A61718305853000F1CFC /* D03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5262A60E18305853000F1CFC /* D03.jpg */; };
+		5262A61818305853000F1CFC /* D04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5262A60F18305853000F1CFC /* D04.jpg */; };
+		5262A61918305853000F1CFC /* D05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5262A61018305853000F1CFC /* D05.jpg */; };
+		5262A61A18305853000F1CFC /* D06.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5262A61118305853000F1CFC /* D06.jpg */; };
+		5262A61B18305853000F1CFC /* D07.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5262A61218305853000F1CFC /* D07.jpg */; };
+		5262A61C18305853000F1CFC /* D08.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5262A61318305853000F1CFC /* D08.jpg */; };
+		5262A61D18305853000F1CFC /* D09.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5262A61418305853000F1CFC /* D09.jpg */; };
+		5262A62818305859000F1CFC /* P01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5262A61E18305859000F1CFC /* P01.jpg */; };
+		5262A62918305859000F1CFC /* P02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5262A61F18305859000F1CFC /* P02.jpg */; };
+		5262A62A18305859000F1CFC /* P03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5262A62018305859000F1CFC /* P03.jpg */; };
+		5262A62B18305859000F1CFC /* P04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5262A62118305859000F1CFC /* P04.jpg */; };
+		5262A62C18305859000F1CFC /* P05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5262A62218305859000F1CFC /* P05.jpg */; };
+		5262A62D18305859000F1CFC /* P06.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5262A62318305859000F1CFC /* P06.jpg */; };
+		5262A62E18305859000F1CFC /* P07.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5262A62418305859000F1CFC /* P07.jpg */; };
+		5262A62F18305859000F1CFC /* P08.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5262A62518305859000F1CFC /* P08.jpg */; };
+		5262A63018305859000F1CFC /* P09.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5262A62618305859000F1CFC /* P09.jpg */; };
+		5262A63118305859000F1CFC /* P10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5262A62718305859000F1CFC /* P10.jpg */; };
+		52A24CF01830129F0008A1CF /* DoctoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A24CEF1830129F0008A1CF /* DoctoresViewController.m */; };
+		52A24CF3183012A70008A1CF /* PacientesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A24CF2183012A70008A1CF /* PacientesViewController.m */; };
+		52A24CF6183012AE0008A1CF /* AnalisisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A24CF5183012AE0008A1CF /* AnalisisViewController.m */; };
+		52B1B1BE1830324F0030C47C /* HospitalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B1B1BD1830324F0030C47C /* HospitalCell.m */; };
 		52DEAD2C18300C47009E3737 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DEAD2B18300C47009E3737 /* Foundation.framework */; };
 		52DEAD2E18300C47009E3737 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DEAD2D18300C47009E3737 /* CoreGraphics.framework */; };
 		52DEAD3018300C47009E3737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DEAD2F18300C47009E3737 /* UIKit.framework */; };
@@ -14,13 +37,27 @@
 		52DEAD3818300C47009E3737 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DEAD3718300C47009E3737 /* main.m */; };
 		52DEAD3C18300C47009E3737 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DEAD3B18300C47009E3737 /* AppDelegate.m */; };
 		52DEAD3F18300C47009E3737 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52DEAD3D18300C47009E3737 /* Main.storyboard */; };
-		52DEAD4218300C47009E3737 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DEAD4118300C47009E3737 /* ViewController.m */; };
 		52DEAD4418300C47009E3737 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52DEAD4318300C47009E3737 /* Images.xcassets */; };
 		52DEAD4B18300C47009E3737 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DEAD4A18300C47009E3737 /* XCTest.framework */; };
 		52DEAD4C18300C47009E3737 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DEAD2B18300C47009E3737 /* Foundation.framework */; };
 		52DEAD4D18300C47009E3737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DEAD2F18300C47009E3737 /* UIKit.framework */; };
 		52DEAD5518300C47009E3737 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52DEAD5318300C47009E3737 /* InfoPlist.strings */; };
 		52DEAD5718300C47009E3737 /* HospitalManageriOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DEAD5618300C47009E3737 /* HospitalManageriOSTests.m */; };
+		52DEAD6318300CAD009E3737 /* actions.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DEAD6218300CAD009E3737 /* actions.m */; };
+		52DEAD8B18300CE4009E3737 /* TBinaryProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DEAD6818300CE4009E3737 /* TBinaryProtocol.m */; };
+		52DEAD8C18300CE4009E3737 /* TProtocolException.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DEAD6B18300CE4009E3737 /* TProtocolException.m */; };
+		52DEAD8D18300CE4009E3737 /* TProtocolUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DEAD6E18300CE4009E3737 /* TProtocolUtil.m */; };
+		52DEAD8E18300CE4009E3737 /* TSocketServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DEAD7118300CE4009E3737 /* TSocketServer.m */; };
+		52DEAD8F18300CE4009E3737 /* TApplicationException.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DEAD7318300CE4009E3737 /* TApplicationException.m */; };
+		52DEAD9018300CE4009E3737 /* TException.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DEAD7518300CE4009E3737 /* TException.m */; };
+		52DEAD9118300CE4009E3737 /* TFramedTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DEAD7B18300CE4009E3737 /* TFramedTransport.m */; };
+		52DEAD9218300CE4009E3737 /* THTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DEAD7D18300CE4009E3737 /* THTTPClient.m */; };
+		52DEAD9318300CE4009E3737 /* TMemoryBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DEAD7F18300CE4009E3737 /* TMemoryBuffer.m */; };
+		52DEAD9418300CE4009E3737 /* TNSFileHandleTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DEAD8118300CE4009E3737 /* TNSFileHandleTransport.m */; };
+		52DEAD9518300CE4009E3737 /* TNSStreamTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DEAD8318300CE4009E3737 /* TNSStreamTransport.m */; };
+		52DEAD9618300CE4009E3737 /* TSocketClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DEAD8518300CE4009E3737 /* TSocketClient.m */; };
+		52DEAD9718300CE4009E3737 /* TTransportException.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DEAD8818300CE4009E3737 /* TTransportException.m */; };
+		52DEAD9818300CE4009E3737 /* TSharedProcessorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DEAD8A18300CE4009E3737 /* TSharedProcessorFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +71,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5262A60C18305853000F1CFC /* D01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = D01.jpg; sourceTree = "<group>"; };
+		5262A60D18305853000F1CFC /* D02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = D02.jpg; sourceTree = "<group>"; };
+		5262A60E18305853000F1CFC /* D03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = D03.jpg; sourceTree = "<group>"; };
+		5262A60F18305853000F1CFC /* D04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = D04.jpg; sourceTree = "<group>"; };
+		5262A61018305853000F1CFC /* D05.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = D05.jpg; sourceTree = "<group>"; };
+		5262A61118305853000F1CFC /* D06.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = D06.jpg; sourceTree = "<group>"; };
+		5262A61218305853000F1CFC /* D07.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = D07.jpg; sourceTree = "<group>"; };
+		5262A61318305853000F1CFC /* D08.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = D08.jpg; sourceTree = "<group>"; };
+		5262A61418305853000F1CFC /* D09.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = D09.jpg; sourceTree = "<group>"; };
+		5262A61E18305859000F1CFC /* P01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = P01.jpg; sourceTree = "<group>"; };
+		5262A61F18305859000F1CFC /* P02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = P02.jpg; sourceTree = "<group>"; };
+		5262A62018305859000F1CFC /* P03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = P03.jpg; sourceTree = "<group>"; };
+		5262A62118305859000F1CFC /* P04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = P04.jpg; sourceTree = "<group>"; };
+		5262A62218305859000F1CFC /* P05.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = P05.jpg; sourceTree = "<group>"; };
+		5262A62318305859000F1CFC /* P06.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = P06.jpg; sourceTree = "<group>"; };
+		5262A62418305859000F1CFC /* P07.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = P07.jpg; sourceTree = "<group>"; };
+		5262A62518305859000F1CFC /* P08.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = P08.jpg; sourceTree = "<group>"; };
+		5262A62618305859000F1CFC /* P09.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = P09.jpg; sourceTree = "<group>"; };
+		5262A62718305859000F1CFC /* P10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = P10.jpg; sourceTree = "<group>"; };
+		52A24CEE1830129F0008A1CF /* DoctoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctoresViewController.h; sourceTree = "<group>"; };
+		52A24CEF1830129F0008A1CF /* DoctoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctoresViewController.m; sourceTree = "<group>"; };
+		52A24CF1183012A70008A1CF /* PacientesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PacientesViewController.h; sourceTree = "<group>"; };
+		52A24CF2183012A70008A1CF /* PacientesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PacientesViewController.m; sourceTree = "<group>"; };
+		52A24CF4183012AE0008A1CF /* AnalisisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalisisViewController.h; sourceTree = "<group>"; };
+		52A24CF5183012AE0008A1CF /* AnalisisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalisisViewController.m; sourceTree = "<group>"; };
+		52B1B1BC1830324F0030C47C /* HospitalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HospitalCell.h; sourceTree = "<group>"; };
+		52B1B1BD1830324F0030C47C /* HospitalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HospitalCell.m; sourceTree = "<group>"; };
 		52DEAD2818300C47009E3737 /* HospitalManageriOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HospitalManageriOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52DEAD2B18300C47009E3737 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		52DEAD2D18300C47009E3737 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -45,14 +109,49 @@
 		52DEAD3A18300C47009E3737 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		52DEAD3B18300C47009E3737 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		52DEAD3E18300C47009E3737 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		52DEAD4018300C47009E3737 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		52DEAD4118300C47009E3737 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		52DEAD4318300C47009E3737 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		52DEAD4918300C47009E3737 /* HospitalManageriOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HospitalManageriOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52DEAD4A18300C47009E3737 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		52DEAD5218300C47009E3737 /* HospitalManageriOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HospitalManageriOSTests-Info.plist"; sourceTree = "<group>"; };
 		52DEAD5418300C47009E3737 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		52DEAD5618300C47009E3737 /* HospitalManageriOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HospitalManageriOSTests.m; sourceTree = "<group>"; };
+		52DEAD6118300CAD009E3737 /* actions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = actions.h; sourceTree = "<group>"; };
+		52DEAD6218300CAD009E3737 /* actions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = actions.m; sourceTree = "<group>"; };
+		52DEAD6618300CE4009E3737 /* TBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBase.h; sourceTree = "<group>"; };
+		52DEAD6718300CE4009E3737 /* TBinaryProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBinaryProtocol.h; sourceTree = "<group>"; };
+		52DEAD6818300CE4009E3737 /* TBinaryProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBinaryProtocol.m; sourceTree = "<group>"; };
+		52DEAD6918300CE4009E3737 /* TProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TProtocol.h; sourceTree = "<group>"; };
+		52DEAD6A18300CE4009E3737 /* TProtocolException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TProtocolException.h; sourceTree = "<group>"; };
+		52DEAD6B18300CE4009E3737 /* TProtocolException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TProtocolException.m; sourceTree = "<group>"; };
+		52DEAD6C18300CE4009E3737 /* TProtocolFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TProtocolFactory.h; sourceTree = "<group>"; };
+		52DEAD6D18300CE4009E3737 /* TProtocolUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TProtocolUtil.h; sourceTree = "<group>"; };
+		52DEAD6E18300CE4009E3737 /* TProtocolUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TProtocolUtil.m; sourceTree = "<group>"; };
+		52DEAD7018300CE4009E3737 /* TSocketServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSocketServer.h; sourceTree = "<group>"; };
+		52DEAD7118300CE4009E3737 /* TSocketServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSocketServer.m; sourceTree = "<group>"; };
+		52DEAD7218300CE4009E3737 /* TApplicationException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TApplicationException.h; sourceTree = "<group>"; };
+		52DEAD7318300CE4009E3737 /* TApplicationException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TApplicationException.m; sourceTree = "<group>"; };
+		52DEAD7418300CE4009E3737 /* TException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TException.h; sourceTree = "<group>"; };
+		52DEAD7518300CE4009E3737 /* TException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TException.m; sourceTree = "<group>"; };
+		52DEAD7618300CE4009E3737 /* TObjective-C.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TObjective-C.h"; sourceTree = "<group>"; };
+		52DEAD7718300CE4009E3737 /* TProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TProcessor.h; sourceTree = "<group>"; };
+		52DEAD7818300CE4009E3737 /* TProcessorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TProcessorFactory.h; sourceTree = "<group>"; };
+		52DEAD7A18300CE4009E3737 /* TFramedTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFramedTransport.h; sourceTree = "<group>"; };
+		52DEAD7B18300CE4009E3737 /* TFramedTransport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFramedTransport.m; sourceTree = "<group>"; };
+		52DEAD7C18300CE4009E3737 /* THTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THTTPClient.h; sourceTree = "<group>"; };
+		52DEAD7D18300CE4009E3737 /* THTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THTTPClient.m; sourceTree = "<group>"; };
+		52DEAD7E18300CE4009E3737 /* TMemoryBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMemoryBuffer.h; sourceTree = "<group>"; };
+		52DEAD7F18300CE4009E3737 /* TMemoryBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMemoryBuffer.m; sourceTree = "<group>"; };
+		52DEAD8018300CE4009E3737 /* TNSFileHandleTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNSFileHandleTransport.h; sourceTree = "<group>"; };
+		52DEAD8118300CE4009E3737 /* TNSFileHandleTransport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNSFileHandleTransport.m; sourceTree = "<group>"; };
+		52DEAD8218300CE4009E3737 /* TNSStreamTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNSStreamTransport.h; sourceTree = "<group>"; };
+		52DEAD8318300CE4009E3737 /* TNSStreamTransport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNSStreamTransport.m; sourceTree = "<group>"; };
+		52DEAD8418300CE4009E3737 /* TSocketClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSocketClient.h; sourceTree = "<group>"; };
+		52DEAD8518300CE4009E3737 /* TSocketClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSocketClient.m; sourceTree = "<group>"; };
+		52DEAD8618300CE4009E3737 /* TTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTransport.h; sourceTree = "<group>"; };
+		52DEAD8718300CE4009E3737 /* TTransportException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTransportException.h; sourceTree = "<group>"; };
+		52DEAD8818300CE4009E3737 /* TTransportException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTransportException.m; sourceTree = "<group>"; };
+		52DEAD8918300CE4009E3737 /* TSharedProcessorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSharedProcessorFactory.h; sourceTree = "<group>"; };
+		52DEAD8A18300CE4009E3737 /* TSharedProcessorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSharedProcessorFactory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +178,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52B1B1931830249D0030C47C /* images */ = {
+			isa = PBXGroup;
+			children = (
+				5262A61E18305859000F1CFC /* P01.jpg */,
+				5262A61F18305859000F1CFC /* P02.jpg */,
+				5262A62018305859000F1CFC /* P03.jpg */,
+				5262A62118305859000F1CFC /* P04.jpg */,
+				5262A62218305859000F1CFC /* P05.jpg */,
+				5262A62318305859000F1CFC /* P06.jpg */,
+				5262A62418305859000F1CFC /* P07.jpg */,
+				5262A62518305859000F1CFC /* P08.jpg */,
+				5262A62618305859000F1CFC /* P09.jpg */,
+				5262A62718305859000F1CFC /* P10.jpg */,
+				5262A60C18305853000F1CFC /* D01.jpg */,
+				5262A60D18305853000F1CFC /* D02.jpg */,
+				5262A60E18305853000F1CFC /* D03.jpg */,
+				5262A60F18305853000F1CFC /* D04.jpg */,
+				5262A61018305853000F1CFC /* D05.jpg */,
+				5262A61118305853000F1CFC /* D06.jpg */,
+				5262A61218305853000F1CFC /* D07.jpg */,
+				5262A61318305853000F1CFC /* D08.jpg */,
+				5262A61418305853000F1CFC /* D09.jpg */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		52DEAD1F18300C47009E3737 = {
 			isa = PBXGroup;
 			children = (
+				52DEAD6018300CAD009E3737 /* gen-cocoa */,
+				52DEAD6418300CE4009E3737 /* thrift */,
 				52DEAD3118300C47009E3737 /* HospitalManageriOS */,
 				52DEAD5018300C47009E3737 /* HospitalManageriOSTests */,
 				52DEAD2A18300C47009E3737 /* Frameworks */,
@@ -115,8 +242,7 @@
 				52DEAD3A18300C47009E3737 /* AppDelegate.h */,
 				52DEAD3B18300C47009E3737 /* AppDelegate.m */,
 				52DEAD3D18300C47009E3737 /* Main.storyboard */,
-				52DEAD4018300C47009E3737 /* ViewController.h */,
-				52DEAD4118300C47009E3737 /* ViewController.m */,
+				52DEAD9918301013009E3737 /* ViewController */,
 				52DEAD4318300C47009E3737 /* Images.xcassets */,
 				52DEAD3218300C47009E3737 /* Supporting Files */,
 			);
@@ -126,10 +252,13 @@
 		52DEAD3218300C47009E3737 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				52B1B1931830249D0030C47C /* images */,
 				52DEAD3318300C47009E3737 /* HospitalManageriOS-Info.plist */,
 				52DEAD3418300C47009E3737 /* InfoPlist.strings */,
 				52DEAD3718300C47009E3737 /* main.m */,
 				52DEAD3918300C47009E3737 /* HospitalManageriOS-Prefix.pch */,
+				52B1B1BC1830324F0030C47C /* HospitalCell.h */,
+				52B1B1BD1830324F0030C47C /* HospitalCell.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -150,6 +279,95 @@
 				52DEAD5318300C47009E3737 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52DEAD6018300CAD009E3737 /* gen-cocoa */ = {
+			isa = PBXGroup;
+			children = (
+				52DEAD6118300CAD009E3737 /* actions.h */,
+				52DEAD6218300CAD009E3737 /* actions.m */,
+			);
+			path = "gen-cocoa";
+			sourceTree = "<group>";
+		};
+		52DEAD6418300CE4009E3737 /* thrift */ = {
+			isa = PBXGroup;
+			children = (
+				52DEAD6518300CE4009E3737 /* protocol */,
+				52DEAD6F18300CE4009E3737 /* server */,
+				52DEAD7218300CE4009E3737 /* TApplicationException.h */,
+				52DEAD7318300CE4009E3737 /* TApplicationException.m */,
+				52DEAD7418300CE4009E3737 /* TException.h */,
+				52DEAD7518300CE4009E3737 /* TException.m */,
+				52DEAD7618300CE4009E3737 /* TObjective-C.h */,
+				52DEAD7718300CE4009E3737 /* TProcessor.h */,
+				52DEAD7818300CE4009E3737 /* TProcessorFactory.h */,
+				52DEAD7918300CE4009E3737 /* transport */,
+				52DEAD8918300CE4009E3737 /* TSharedProcessorFactory.h */,
+				52DEAD8A18300CE4009E3737 /* TSharedProcessorFactory.m */,
+			);
+			name = thrift;
+			path = src;
+			sourceTree = "<group>";
+		};
+		52DEAD6518300CE4009E3737 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				52DEAD6618300CE4009E3737 /* TBase.h */,
+				52DEAD6718300CE4009E3737 /* TBinaryProtocol.h */,
+				52DEAD6818300CE4009E3737 /* TBinaryProtocol.m */,
+				52DEAD6918300CE4009E3737 /* TProtocol.h */,
+				52DEAD6A18300CE4009E3737 /* TProtocolException.h */,
+				52DEAD6B18300CE4009E3737 /* TProtocolException.m */,
+				52DEAD6C18300CE4009E3737 /* TProtocolFactory.h */,
+				52DEAD6D18300CE4009E3737 /* TProtocolUtil.h */,
+				52DEAD6E18300CE4009E3737 /* TProtocolUtil.m */,
+			);
+			path = protocol;
+			sourceTree = "<group>";
+		};
+		52DEAD6F18300CE4009E3737 /* server */ = {
+			isa = PBXGroup;
+			children = (
+				52DEAD7018300CE4009E3737 /* TSocketServer.h */,
+				52DEAD7118300CE4009E3737 /* TSocketServer.m */,
+			);
+			path = server;
+			sourceTree = "<group>";
+		};
+		52DEAD7918300CE4009E3737 /* transport */ = {
+			isa = PBXGroup;
+			children = (
+				52DEAD7A18300CE4009E3737 /* TFramedTransport.h */,
+				52DEAD7B18300CE4009E3737 /* TFramedTransport.m */,
+				52DEAD7C18300CE4009E3737 /* THTTPClient.h */,
+				52DEAD7D18300CE4009E3737 /* THTTPClient.m */,
+				52DEAD7E18300CE4009E3737 /* TMemoryBuffer.h */,
+				52DEAD7F18300CE4009E3737 /* TMemoryBuffer.m */,
+				52DEAD8018300CE4009E3737 /* TNSFileHandleTransport.h */,
+				52DEAD8118300CE4009E3737 /* TNSFileHandleTransport.m */,
+				52DEAD8218300CE4009E3737 /* TNSStreamTransport.h */,
+				52DEAD8318300CE4009E3737 /* TNSStreamTransport.m */,
+				52DEAD8418300CE4009E3737 /* TSocketClient.h */,
+				52DEAD8518300CE4009E3737 /* TSocketClient.m */,
+				52DEAD8618300CE4009E3737 /* TTransport.h */,
+				52DEAD8718300CE4009E3737 /* TTransportException.h */,
+				52DEAD8818300CE4009E3737 /* TTransportException.m */,
+			);
+			path = transport;
+			sourceTree = "<group>";
+		};
+		52DEAD9918301013009E3737 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				52A24CEE1830129F0008A1CF /* DoctoresViewController.h */,
+				52A24CEF1830129F0008A1CF /* DoctoresViewController.m */,
+				52A24CF1183012A70008A1CF /* PacientesViewController.h */,
+				52A24CF2183012A70008A1CF /* PacientesViewController.m */,
+				52A24CF4183012AE0008A1CF /* AnalisisViewController.h */,
+				52A24CF5183012AE0008A1CF /* AnalisisViewController.m */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +417,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Aplicaciones Web";
 				TargetAttributes = {
+					52DEAD2718300C47009E3737 = {
+						DevelopmentTeam = 8GU44875ZD;
+					};
 					52DEAD4818300C47009E3737 = {
 						TestTargetID = 52DEAD2718300C47009E3737;
 					};
@@ -228,9 +449,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5262A63018305859000F1CFC /* P09.jpg in Resources */,
+				5262A62918305859000F1CFC /* P02.jpg in Resources */,
 				52DEAD4418300C47009E3737 /* Images.xcassets in Resources */,
 				52DEAD3618300C47009E3737 /* InfoPlist.strings in Resources */,
 				52DEAD3F18300C47009E3737 /* Main.storyboard in Resources */,
+				5262A61D18305853000F1CFC /* D09.jpg in Resources */,
+				5262A61B18305853000F1CFC /* D07.jpg in Resources */,
+				5262A62D18305859000F1CFC /* P06.jpg in Resources */,
+				5262A61C18305853000F1CFC /* D08.jpg in Resources */,
+				5262A61718305853000F1CFC /* D03.jpg in Resources */,
+				5262A62C18305859000F1CFC /* P05.jpg in Resources */,
+				5262A61818305853000F1CFC /* D04.jpg in Resources */,
+				5262A62A18305859000F1CFC /* P03.jpg in Resources */,
+				5262A62B18305859000F1CFC /* P04.jpg in Resources */,
+				5262A62E18305859000F1CFC /* P07.jpg in Resources */,
+				5262A62F18305859000F1CFC /* P08.jpg in Resources */,
+				5262A62818305859000F1CFC /* P01.jpg in Resources */,
+				5262A63118305859000F1CFC /* P10.jpg in Resources */,
+				5262A61618305853000F1CFC /* D02.jpg in Resources */,
+				5262A61A18305853000F1CFC /* D06.jpg in Resources */,
+				5262A61518305853000F1CFC /* D01.jpg in Resources */,
+				5262A61918305853000F1CFC /* D05.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,9 +489,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52DEAD4218300C47009E3737 /* ViewController.m in Sources */,
+				52A24CF01830129F0008A1CF /* DoctoresViewController.m in Sources */,
+				52DEAD8D18300CE4009E3737 /* TProtocolUtil.m in Sources */,
+				52DEAD9818300CE4009E3737 /* TSharedProcessorFactory.m in Sources */,
+				52DEAD8B18300CE4009E3737 /* TBinaryProtocol.m in Sources */,
+				52DEAD9718300CE4009E3737 /* TTransportException.m in Sources */,
+				52DEAD8F18300CE4009E3737 /* TApplicationException.m in Sources */,
+				52DEAD8C18300CE4009E3737 /* TProtocolException.m in Sources */,
+				52B1B1BE1830324F0030C47C /* HospitalCell.m in Sources */,
+				52A24CF6183012AE0008A1CF /* AnalisisViewController.m in Sources */,
+				52A24CF3183012A70008A1CF /* PacientesViewController.m in Sources */,
+				52DEAD6318300CAD009E3737 /* actions.m in Sources */,
+				52DEAD9618300CE4009E3737 /* TSocketClient.m in Sources */,
 				52DEAD3C18300C47009E3737 /* AppDelegate.m in Sources */,
+				52DEAD9518300CE4009E3737 /* TNSStreamTransport.m in Sources */,
+				52DEAD8E18300CE4009E3737 /* TSocketServer.m in Sources */,
+				52DEAD9018300CE4009E3737 /* TException.m in Sources */,
+				52DEAD9318300CE4009E3737 /* TMemoryBuffer.m in Sources */,
+				52DEAD9118300CE4009E3737 /* TFramedTransport.m in Sources */,
 				52DEAD3818300C47009E3737 /* main.m in Sources */,
+				52DEAD9218300CE4009E3737 /* THTTPClient.m in Sources */,
+				52DEAD9418300CE4009E3737 /* TNSFileHandleTransport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,12 +634,20 @@
 		52DEAD5B18300C47009E3737 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Alejandro Cardenas (2XPAC6AAR8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alejandro Cardenas (2XPAC6AAR8)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HospitalManageriOS/HospitalManageriOS-Prefix.pch";
 				INFOPLIST_FILE = "HospitalManageriOS/HospitalManageriOS-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8BAFFE0E-E7C4-439B-ADD1-DD6D1C22CF28";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -389,12 +655,20 @@
 		52DEAD5C18300C47009E3737 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Alejandro Cardenas (2XPAC6AAR8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alejandro Cardenas (2XPAC6AAR8)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HospitalManageriOS/HospitalManageriOS-Prefix.pch";
 				INFOPLIST_FILE = "HospitalManageriOS/HospitalManageriOS-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8BAFFE0E-E7C4-439B-ADD1-DD6D1C22CF28";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -460,6 +734,7 @@
 				52DEAD5C18300C47009E3737 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		52DEAD5D18300C47009E3737 /* Build configuration list for PBXNativeTarget "HospitalManageriOSTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +743,7 @@
 				52DEAD5F18300C47009E3737 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

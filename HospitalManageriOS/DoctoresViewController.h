@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DoctoresViewController : UIViewController
+@interface DoctoresViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate>
 
 @end
