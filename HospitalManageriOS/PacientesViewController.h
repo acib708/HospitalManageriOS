@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PacientesViewController.h
 //  HospitalManageriOS
 //
 //  Created by Alejandro Cárdenas on 11/10/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface PacientesViewController : UIViewController
 
 @end
