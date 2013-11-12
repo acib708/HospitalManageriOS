@@ -66,8 +66,7 @@
 	return self;
 }
 
--(void)dealloc
-{
+-(void)close{
     [inputStream close];
     [inputStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     [inputStream setDelegate:nil];
@@ -78,6 +77,10 @@
     [outputStream setDelegate:nil];
     [outputStream release_stub];
     [super dealloc_stub];
+}
+
+- (void)dealloc{
+    [self close];
 }
 
 

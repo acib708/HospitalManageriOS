@@ -14,5 +14,6 @@
 @property (strong, nonatomic) UIWindow *window;
 
 -(ActionsClient *)getServer;
+-(void)closeServer;
 
 @end

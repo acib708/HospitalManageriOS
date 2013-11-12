@@ -30,10 +30,6 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    //Server
-    if(!_server)
-        _server = [(AppDelegate *)[[UIApplication sharedApplication] delegate] getServer];
-    
     //GUI
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg1"]]];
     
@@ -73,31 +69,75 @@
 
 #pragma mark - Reports
 -(void)displayAnalisisPaciente{
-    Paciente* paciente = [_server consultarPacienteClave:_clavePaciente];
-    [_imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg", paciente.clave]]];
-    [_lTop setText:[NSString stringWithFormat:@"Paciente %@", paciente.clave]];
-    [_lBottom setText:paciente.nombre];
+    @try{
+        _server = [(AppDelegate *)[[UIApplication sharedApplication] delegate] getServer];
+        Paciente* paciente = [_server consultarPacienteClave:_clavePaciente];
+        [(AppDelegate *)[[UIApplication sharedApplication] delegate] closeServer];
+        [_imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg", paciente.clave]]];
+        [_lTop setText:[NSString stringWithFormat:@"Paciente %@", paciente.clave]];
+        [_lBottom setText:paciente.nombre];
+    }
+    @catch(TException *e){
+        [[[UIAlertView alloc] initWithTitle:@"Error"
+                                    message:@"Hubo un error al conectarse al servidor. Favor de intentar de nuevo."
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles: nil] show];
+    }
 }
 
 -(void)displayDoctoresPaciente{
-    Paciente* paciente = [_server consultarPacienteClave:_clavePaciente];
-    [_imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg", paciente.clave]]];
-    [_lTop setText:[NSString stringWithFormat:@"Paciente %@", paciente.clave]];
-    [_lBottom setText:paciente.nombre];
+    @try{
+        _server = [(AppDelegate *)[[UIApplication sharedApplication] delegate] getServer];
+        Paciente* paciente = [_server consultarPacienteClave:_clavePaciente];
+        [(AppDelegate *)[[UIApplication sharedApplication] delegate] closeServer];
+        [_imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg", paciente.clave]]];
+        [_lTop setText:[NSString stringWithFormat:@"Paciente %@", paciente.clave]];
+        [_lBottom setText:paciente.nombre];
+    }
+    @catch(TException *e){
+        [[[UIAlertView alloc] initWithTitle:@"Error"
+                                    message:@"Hubo un error al conectarse al servidor. Favor de intentar de nuevo."
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles: nil] show];
+    }
 }
 
 -(void)displayPacientesAnalisis{
-    AnalisisClinico* analisis = [_server consultarAnalisisClave:_claveAnalisis];
-    [_imageView setImage:[UIImage imageNamed:@"imageAnalisis.jpg"]];
-    [_lTop setText:[NSString stringWithFormat:@"Análisis %@", analisis.clave]];
-    [_lBottom setText:[NSString stringWithFormat:@"%@ | %@", analisis.tipo, analisis.descripcion]];
+    @try{
+        _server = [(AppDelegate *)[[UIApplication sharedApplication] delegate] getServer];
+        AnalisisClinico* analisis = [_server consultarAnalisisClave:_claveAnalisis];
+        [(AppDelegate *)[[UIApplication sharedApplication] delegate] closeServer];
+        [_imageView setImage:[UIImage imageNamed:@"imageAnalisis.jpg"]];
+        [_lTop setText:[NSString stringWithFormat:@"Análisis %@", analisis.clave]];
+        [_lBottom setText:[NSString stringWithFormat:@"%@ | %@", analisis.tipo, analisis.descripcion]];
+    }
+    @catch(TException *e){
+        [[[UIAlertView alloc] initWithTitle:@"Error"
+                                    message:@"Hubo un error al conectarse al servidor. Favor de intentar de nuevo."
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles: nil] show];
+    }
 }
 
 -(void)displayPacientesDoctor{
-    Doctor* doctor = [_server consultarDoctorClave:_claveDoctor];
-    [_imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg", doctor.clave]]];
-    [_lTop setText:[NSString stringWithFormat:@"Doctor %@", doctor.clave]];
-    [_lBottom setText:doctor.nombre];
+    @try{
+        _server = [(AppDelegate *)[[UIApplication sharedApplication] delegate] getServer];
+        Doctor* doctor = [_server consultarDoctorClave:_claveDoctor];
+        [(AppDelegate *)[[UIApplication sharedApplication] delegate] closeServer];
+        [_imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg", doctor.clave]]];
+        [_lTop setText:[NSString stringWithFormat:@"Doctor %@", doctor.clave]];
+        [_lBottom setText:doctor.nombre];
+    }
+    @catch(TException *e){
+        [[[UIAlertView alloc] initWithTitle:@"Error"
+                                    message:@"Hubo un error al conectarse al servidor. Favor de intentar de nuevo."
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles: nil] show];
+    }
 }
 
 #pragma mark - TableView

@@ -10,13 +10,16 @@
 #import "actions.h"
 #import "TSocketClient.h"
 #import "TBinaryProtocol.h"
+#import "TFramedTransport.h"
 
 @interface AppDelegate()
 @property ActionsClient* server;
+@property TSocketClient *transport;
+@property TBinaryProtocol *protocol;
 @end
 
 @implementation AppDelegate
-@synthesize server = _server;
+@synthesize server = _server, transport = _transport, protocol = _protocol;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     // Override point for customization after application launchh
@@ -47,12 +50,17 @@
 
 -(ActionsClient *)getServer{
     if(!_server){
-        TSocketClient  *transport = [[TSocketClient alloc] initWithHostname:@"127.0.0.1" port:7911];
-        TBinaryProtocol *protocol = [[TBinaryProtocol alloc] initWithTransport:transport strictRead:YES strictWrite:YES];
-        _server = [[ActionsClient alloc] initWithProtocol:protocol];
+        _transport = [[TSocketClient alloc] initWithHostname:@"127.0.0.1" port:7911];
+        _protocol = [[TBinaryProtocol alloc] initWithTransport:_transport strictRead:YES strictWrite:YES];
+        _server = [[ActionsClient alloc] initWithProtocol:_protocol];
     }
     
     return _server;
+}
+
+-(void)closeServer{
+    [_transport close];
+    _server    = nil;
 }
 
 @end

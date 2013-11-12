@@ -29,6 +29,7 @@
 
 - (id) initWithHostname: (NSString *) hostname
                    port: (int) port;
+-(void)close;
 
 @end
 

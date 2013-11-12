@@ -50,9 +50,6 @@
     [_bDoctoresPaciente  addGestureRecognizer:tapDoctoresPaciente];
     [_bPacientesAnalisis addGestureRecognizer:tapPacientesAnalisis];
     [_bPacientesDoctor   addGestureRecognizer:tapPacientesDoctor];
-    
-    if(!_server)
-        _server = [(AppDelegate *)[[UIApplication sharedApplication] delegate] getServer];
 }
 
 - (void)didReceiveMemoryWarning{
@@ -130,34 +127,48 @@
                                                   cancelButtonTitle:@"Regresar"
                                                   otherButtonTitles:nil];
         
-        switch (_reportType) {
-            case rAnalisisPaciente:
-                _clavePaciente = [[alertView textFieldAtIndex:0] text];
-                _reports = [_server generarReporteAnalisisPaciente:_clavePaciente];
-                if(_reports.count == 0) [noReports show];
-                else [self performSegueWithIdentifier:@"modalToReport" sender:self];
-                break;
-            case rDoctoresPaciente:
-                _clavePaciente = [[alertView textFieldAtIndex:0] text];
-                _reports = [_server generarReporteDoctoresPaciente:_clavePaciente];
-                if(_reports.count == 0) [noReports show];
-                else [self performSegueWithIdentifier:@"modalToReport" sender:self];
-                break;
-            case rPacientesAnalisis:
-                _claveAnalisis = [[alertView textFieldAtIndex:0] text];
-                _reports = [_server generarReportePacientesAnalisis:_claveAnalisis];
-                if(_reports.count == 0) [noReports show];
-                else [self performSegueWithIdentifier:@"modalToReport" sender:self];
-                break;
-            case rPacientesDoctor:
-                _claveDoctor   = [[alertView textFieldAtIndex:0] text];
-                _reports = [_server generarReportePacientesDoctor:_claveDoctor];
-                if(_reports.count == 0) [noReports show];
-                else [self performSegueWithIdentifier:@"modalToReport" sender:self];
-                break;
-            default:
-                [NSException raise:@"Unknown report type." format:@"There was an error with reports."];
-                break;
+        @try{
+            switch (_reportType) {
+                case rAnalisisPaciente:
+                    _clavePaciente = [[alertView textFieldAtIndex:0] text];
+                    if(_reports.count == 0) [noReports show];
+                    else [self performSegueWithIdentifier:@"modalToReport" sender:self];
+                    break;
+                case rDoctoresPaciente:
+                    _clavePaciente = [[alertView textFieldAtIndex:0] text];
+                    _server = [(AppDelegate *)[[UIApplication sharedApplication] delegate] getServer];
+                    _reports = [_server generarReporteDoctoresPaciente:_clavePaciente];
+                    [(AppDelegate *)[[UIApplication sharedApplication] delegate] closeServer];
+                    if(_reports.count == 0) [noReports show];
+                    else [self performSegueWithIdentifier:@"modalToReport" sender:self];
+                    break;
+                case rPacientesAnalisis:
+                    _claveAnalisis = [[alertView textFieldAtIndex:0] text];
+                    _server = [(AppDelegate *)[[UIApplication sharedApplication] delegate] getServer];
+                    _reports = [_server generarReportePacientesAnalisis:_claveAnalisis];
+                    [(AppDelegate *)[[UIApplication sharedApplication] delegate] closeServer];
+                    if(_reports.count == 0) [noReports show];
+                    else [self performSegueWithIdentifier:@"modalToReport" sender:self];
+                    break;
+                case rPacientesDoctor:
+                    _claveDoctor   = [[alertView textFieldAtIndex:0] text];
+                    _server = [(AppDelegate *)[[UIApplication sharedApplication] delegate] getServer];
+                    _reports = [_server generarReportePacientesDoctor:_claveDoctor];
+                    [(AppDelegate *)[[UIApplication sharedApplication] delegate] closeServer];
+                    if(_reports.count == 0) [noReports show];
+                    else [self performSegueWithIdentifier:@"modalToReport" sender:self];
+                    break;
+                default:
+                    [NSException raise:@"Unknown report type." format:@"There was an error with reports."];
+                    break;
+            }
+        }
+        @catch(TException *e){
+            [[[UIAlertView alloc] initWithTitle:@"Error"
+                                        message:@"Hubo un error al conectarse al servidor. Favor de intentar de nuevo."
+                                       delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles: nil] show];
         }
     }
 }

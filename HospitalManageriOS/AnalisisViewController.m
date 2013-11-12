@@ -33,11 +33,19 @@
     UITapGestureRecognizer* tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [_header addGestureRecognizer:tgr];
     
-    if(!_server)
+    @try{
         _server = [(AppDelegate *)[[UIApplication sharedApplication] delegate] getServer];
-    
-    _arrayAnalisis = [_server consultarAnalisis];
-    _arraySearches  = [NSMutableArray arrayWithCapacity:[_arrayAnalisis count]];
+        _arrayAnalisis = [_server consultarAnalisis];
+        [(AppDelegate *)[[UIApplication sharedApplication] delegate] closeServer];
+        _arraySearches  = [NSMutableArray arrayWithCapacity:[_arrayAnalisis count]];
+    }
+    @catch(TException *e){
+        [[[UIAlertView alloc] initWithTitle:@"Error"
+                                    message:@"Hubo un error al conectarse al servidor. Favor de intentar de nuevo."
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles: nil] show];
+    }
 }
 
 - (void)didReceiveMemoryWarning{
