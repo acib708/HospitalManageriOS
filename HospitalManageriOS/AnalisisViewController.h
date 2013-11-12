@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @class ActionsClient;
-@interface AnalisisViewController : UIViewController{
-    ActionsClient *server;
-}
+@interface AnalisisViewController : UIViewController<UITableViewDataSource, UITableViewDataSource, UISearchBarDelegate, UITableViewDelegate>
 
 @end

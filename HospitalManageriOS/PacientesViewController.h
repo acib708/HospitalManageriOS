@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PacienteDetailViewController.h"
 
-@class ActionsClient;
-@interface PacientesViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate>
+@interface PacientesViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, PacienteDetailViewControllerDelegate>
 
 @end

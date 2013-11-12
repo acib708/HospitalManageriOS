@@ -28,6 +28,8 @@
 -(void)setUser:(id)user{
     if([user isMemberOfClass:[Doctor class]]){
         _imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",((Doctor *)user).clave]];
+        if (_imageView.image == nil)
+            _imageView.image = [UIImage imageNamed:@"default.jpg"];
         _label.text      = ((Doctor *)user).nombre;
     }
     else if([user isMemberOfClass:[Paciente class]]){

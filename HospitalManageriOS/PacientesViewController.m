@@ -19,11 +19,15 @@
 //GUI
 @property (weak, nonatomic) IBOutlet UICollectionView *theCollectionView;
 @property (weak, nonatomic) IBOutlet UISearchBar      *searchBar;
+@property (weak, nonatomic) IBOutlet UIView           *header;
+
+//Selected Patient
+@property (weak, nonatomic) NSIndexPath* selectedPatient;
 
 @end
 
 @implementation PacientesViewController
-@synthesize server = _server, arrayPacientes = _arrayPacientes, theCollectionView = _theCollectionView, searchBar = _searchBar, arraySearches = _arraySearches;
+@synthesize server = _server, arrayPacientes = _arrayPacientes, theCollectionView = _theCollectionView, searchBar = _searchBar, arraySearches = _arraySearches, header = _header, selectedPatient = _selectedPatient;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -38,12 +42,15 @@
     //GUI
     [_theCollectionView setBackgroundColor:[UIColor clearColor]];
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg1"]]];
+    //Add tap gesture recognizer to button
+    UITapGestureRecognizer* tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [_header addGestureRecognizer:tgr];
     
     if(!_server)
         _server = [(AppDelegate *)[[UIApplication sharedApplication] delegate] getServer];
     
-    _arrayPacientes  = [_server consultarPacientes];
-    _arraySearches = [NSMutableArray arrayWithCapacity:[_arrayPacientes count]];
+    _arrayPacientes = [_server consultarPacientes];
+    _arraySearches  = [NSMutableArray arrayWithCapacity:[_arrayPacientes count]];
     [_theCollectionView reloadData];
 }
 
@@ -55,11 +62,13 @@
 #pragma mark - Collection View Delegate
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [_searchBar resignFirstResponder];
+    _selectedPatient = indexPath;
+    [self performSegueWithIdentifier:@"modalToPatientDetail" sender:self];
 }
 
 #pragma mark - Collection View DataSource
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    HospitalCell *cell = (HospitalCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"pacienteCell"
+    HospitalCell *cell = (HospitalCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"patientCell"
                                                                                    forIndexPath:indexPath];
     if([_searchBar.text isEqualToString:@""])
         cell.user = [_arrayPacientes objectAtIndex:indexPath.row];
@@ -100,8 +109,28 @@
     [_theCollectionView reloadData];
 }
 
-//-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-//    [_searchBar resignFirstResponder];
-//}
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    [_searchBar resignFirstResponder];
+}
+
+-(void)dismissKeyboard{
+    [_searchBar resignFirstResponder];
+}
+
+#pragma mark - Doctor Detail
+-(void)pacienteDetailViewControllerDidFinish{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"modalToPatientDetail"]){
+        PacienteDetailViewController* pdvc = (PacienteDetailViewController *)segue.destinationViewController;
+        pdvc.delegate = self;
+        if([_searchBar.text isEqualToString:@""])
+            pdvc.paciente = [_arrayPacientes objectAtIndex:_selectedPatient.row];
+        else
+            pdvc.paciente = [_arraySearches objectAtIndex:_selectedPatient.row];
+    }
+}
 
 @end

@@ -19,11 +19,16 @@
 //GUI
 @property (weak, nonatomic) IBOutlet UICollectionView *theCollectionView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UIView *header;
+
+//Selected Doctor
+@property (weak, nonatomic) NSIndexPath* selectedDoctor;
 
 @end
 
 @implementation DoctoresViewController
-@synthesize server = _server, arrayDoctores = _arrayDoctores, theCollectionView = _theCollectionView, searchBar = _searchBar, arraySearches = _arraySearches;
+@synthesize server = _server, arrayDoctores = _arrayDoctores, theCollectionView = _theCollectionView, header = _header;
+@synthesize searchBar = _searchBar, arraySearches = _arraySearches, selectedDoctor = _selectedDoctor;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -38,11 +43,14 @@
     //GUI
     [_theCollectionView setBackgroundColor:[UIColor clearColor]];
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg1"]]];
+    //Add tap gesture recognizer to button
+    UITapGestureRecognizer* tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [_header addGestureRecognizer:tgr];
     
     if(!_server)
         _server = [(AppDelegate *)[[UIApplication sharedApplication] delegate] getServer];
     
-    _arrayDoctores  = [_server consultarDoctores];
+    _arrayDoctores = [_server consultarDoctores];
     _arraySearches = [NSMutableArray arrayWithCapacity:[_arraySearches count]];
     [_theCollectionView reloadData];
 }
@@ -55,6 +63,8 @@
 #pragma mark - Collection View Delegate
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [_searchBar resignFirstResponder];
+    _selectedDoctor = indexPath;
+    [self performSegueWithIdentifier:@"modalToDoctorDetail" sender:self];
 }
 
 #pragma mark - Collection View DataSource
@@ -86,7 +96,6 @@
 
 #pragma mark - Search Bar
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
-    NSLog(@"HEY");
     [searchBar resignFirstResponder];
 }
 
@@ -101,8 +110,28 @@
     [_theCollectionView reloadData];
 }
 
-//-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-//    [_searchBar resignFirstResponder];
-//}
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    [_searchBar resignFirstResponder];
+}
+
+-(void)dismissKeyboard{
+    [_searchBar resignFirstResponder];
+}
+
+#pragma mark - Doctor Detail
+-(void)doctorDetailViewControllerDidFinish{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"modalToDoctorDetail"]){
+        DoctorDetailViewController* ddvc = (DoctorDetailViewController *)segue.destinationViewController;
+        ddvc.delegate = self;
+        if([_searchBar.text isEqualToString:@""])
+            ddvc.doctor = [_arrayDoctores objectAtIndex:_selectedDoctor.row];
+        else
+            ddvc.doctor = [_arraySearches objectAtIndex:_selectedDoctor.row];
+    }
+}
 
 @end

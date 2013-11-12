@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DoctorDetailViewController.h"
 
-@interface DoctoresViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate>
+@interface DoctoresViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, DoctorDetailViewControllerDelegate>
 
 @end
