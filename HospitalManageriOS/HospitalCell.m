@@ -7,13 +7,15 @@
 //
 
 #import "HospitalCell.h"
+#import "actions.h"
 
 @interface HospitalCell()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *label;
 @end
 
 @implementation HospitalCell
-@synthesize image = _image, label = _label, imageView = _imageView;
+@synthesize label = _label, imageView = _imageView, user = _user;
 
 - (id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
@@ -23,8 +25,15 @@
     return self;
 }
 
--(void)setImage:(UIImage *)image{
-    _imageView.image = image;
+-(void)setUser:(id)user{
+    if([user isMemberOfClass:[Doctor class]]){
+        _imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",((Doctor *)user).clave]];
+        _label.text      = ((Doctor *)user).nombre;
+    }
+    else if([user isMemberOfClass:[Paciente class]]){
+        _imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",((Paciente *)user).clave]];
+        _label.text      = ((Paciente *)user).nombre;
+    }
 }
 
 -(void)prepareForReuse{

@@ -13,16 +13,17 @@
 @interface DoctoresViewController ()
 //Client
 @property (nonatomic) ActionsClient*  server;
-@property (nonatomic) NSMutableArray* arrayDoctores;
+@property (nonatomic) NSMutableArray* arraySearches;
+@property (nonatomic) NSArray* arrayDoctores;
 
 //GUI
 @property (weak, nonatomic) IBOutlet UICollectionView *theCollectionView;
-
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
 
 @implementation DoctoresViewController
-@synthesize server = _server, arrayDoctores = _arrayDoctores, theCollectionView = _theCollectionView;
+@synthesize server = _server, arrayDoctores = _arrayDoctores, theCollectionView = _theCollectionView, searchBar = _searchBar, arraySearches = _arraySearches;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -41,8 +42,9 @@
     if(!_server)
         _server = [(AppDelegate *)[[UIApplication sharedApplication] delegate] getServer];
     
-    _arrayDoctores = [_server consultarDoctores];
-//    NSLog(@"%@",_arrayDoctores);
+    _arrayDoctores  = [_server consultarDoctores];
+    _arraySearches = [NSMutableArray arrayWithCapacity:[_arraySearches count]];
+    [_theCollectionView reloadData];
 }
 
 - (void)didReceiveMemoryWarning{
@@ -52,22 +54,26 @@
 
 #pragma mark - Collection View Delegate
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"Selected %d", (int)indexPath.row);
+    [_searchBar resignFirstResponder];
 }
 
-#pragma mark - Collectino View DataSource
+#pragma mark - Collection View DataSource
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     HospitalCell *cell = (HospitalCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"doctorCell"
                                                                                    forIndexPath:indexPath];
+    if([_searchBar.text isEqualToString:@""])
+        cell.user = [_arrayDoctores objectAtIndex:indexPath.row];
+    else
+        cell.user = [_arraySearches objectAtIndex:indexPath.row];
     
-    Doctor* doc = [_arrayDoctores objectAtIndex:indexPath.row];
-    cell.label.text = doc.nombre;
-    cell.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg", (int)indexPath.row+1]];
     return cell;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return [_arrayDoctores count];
+    if([_searchBar.text isEqualToString:@""])
+        return [_arrayDoctores count];
+    
+    return [_arraySearches count];
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -78,9 +84,25 @@
     return UIEdgeInsetsMake(15, 15, 15, 15);
 }
 
-#pragma mark - Search Pressed
-- (IBAction)searchPressed {
+#pragma mark - Search Bar
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    NSLog(@"HEY");
+    [searchBar resignFirstResponder];
 }
 
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [searchBar resignFirstResponder];
+}
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    [_arraySearches removeAllObjects];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(SELF.nombre contains[c] %@) OR (SELF.clave contains[c] %@) OR (SELF.especialidad contains[c] %@)", searchText, searchText, searchText];
+    _arraySearches = [NSMutableArray arrayWithArray:[_arrayDoctores filteredArrayUsingPredicate:predicate]];
+    [_theCollectionView reloadData];
+}
+
+//-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+//    [_searchBar resignFirstResponder];
+//}
 
 @end

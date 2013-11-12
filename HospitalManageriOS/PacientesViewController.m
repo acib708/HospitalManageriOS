@@ -14,7 +14,7 @@
 //Client
 @property (nonatomic) ActionsClient*  server;
 @property (nonatomic) NSMutableArray* arraySearches;
-@property (nonatomic) NSMutableArray* arrayPacientes;
+@property (nonatomic) NSArray* arrayPacientes;
 
 //GUI
 @property (weak, nonatomic) IBOutlet UICollectionView *theCollectionView;
@@ -42,8 +42,9 @@
     if(!_server)
         _server = [(AppDelegate *)[[UIApplication sharedApplication] delegate] getServer];
     
-    _arraySearches  = [_server consultarPacientes];
-    _arrayPacientes = [_arraySearches copy];
+    _arrayPacientes  = [_server consultarPacientes];
+    _arraySearches = [NSMutableArray arrayWithCapacity:[_arrayPacientes count]];
+    [_theCollectionView reloadData];
 }
 
 - (void)didReceiveMemoryWarning{
@@ -53,26 +54,25 @@
 
 #pragma mark - Collection View Delegate
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    if(indexPath.row == 0)
-        [self moveForgotSearchBar:@"down"];
-    else if(indexPath.row == 1)
-        [self moveForgotSearchBar:@"up"];
-    
-    NSLog(@"Selected %ld", (long)indexPath.row);
+    [_searchBar resignFirstResponder];
 }
 
-#pragma mark - Collectino View DataSource
+#pragma mark - Collection View DataSource
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     HospitalCell *cell = (HospitalCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"pacienteCell"
-                                          
                                                                                    forIndexPath:indexPath];
-    Paciente* paciente = [_arraySearches objectAtIndex:indexPath.row];
-    cell.label.text = paciente.nombre;
-    cell.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg", paciente.clave]];
+    if([_searchBar.text isEqualToString:@""])
+        cell.user = [_arrayPacientes objectAtIndex:indexPath.row];
+    else
+        cell.user = [_arraySearches objectAtIndex:indexPath.row];
+    
     return cell;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    if([_searchBar.text isEqualToString:@""])
+        return [_arrayPacientes count];
+    
     return [_arraySearches count];
 }
 
@@ -84,47 +84,24 @@
     return UIEdgeInsetsMake(15, 15, 15, 15);
 }
 
-#pragma mark - Animations and Text Fields
-
--(void)moveForgotSearchBar:(NSString*)position {
-    if ([position isEqualToString:@"down"]) {
-        [UIView beginAnimations:nil context:NULL];
-        [UIView setAnimationDelegate:self];
-        [UIView setAnimationDuration:0.2];
-        [UIView setAnimationBeginsFromCurrentState:YES];
-        _searchBar.frame = CGRectMake(_searchBar.frame.origin.x, (_searchBar.frame.origin.y + 44.0), _searchBar.frame.size.width, _searchBar.frame.size.height);
-        [UIView commitAnimations];
-    }
-    else{
-        [UIView beginAnimations:nil context:NULL];
-        [UIView setAnimationDelegate:self];
-        [UIView setAnimationDuration:0.2];
-        [UIView setAnimationBeginsFromCurrentState:YES];
-        _searchBar.frame = CGRectMake(_searchBar.frame.origin.x, (_searchBar.frame.origin.y - 44.0), _searchBar.frame.size.width, _searchBar.frame.size.height);
-        [UIView commitAnimations];
-    }
-}
-
 #pragma mark - Search Bar
-- (IBAction)searchPRessed {
-    if(_searchBar.frame.origin.y == 46){
-        [self moveForgotSearchBar:@"down"];
-        [_searchBar becomeFirstResponder];
-    }
-    else if(_searchBar.frame.origin.y == 90){
-        [self moveForgotSearchBar:@"up"];
-        [_searchBar resignFirstResponder];
-    }
-}
-
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
     [searchBar resignFirstResponder];
-    [self moveForgotSearchBar:@"up"];
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     [searchBar resignFirstResponder];
-    [self moveForgotSearchBar:@"up"];
 }
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    [_arraySearches removeAllObjects];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(SELF.nombre contains[c] %@) OR (SELF.clave contains[c] %@)", searchText, searchText];
+    _arraySearches = [NSMutableArray arrayWithArray:[_arrayPacientes filteredArrayUsingPredicate:predicate]];
+    [_theCollectionView reloadData];
+}
+
+//-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+//    [_searchBar resignFirstResponder];
+//}
 
 @end

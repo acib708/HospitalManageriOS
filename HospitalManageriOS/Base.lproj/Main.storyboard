@@ -34,19 +34,11 @@
                                         </attributedString>
                                         <color key="highlightedColor" red="0.0" green="0.75189555249999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98O-Pe-TYH">
-                                        <rect key="frame" x="268" y="34" width="32" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="iconSearch"/>
-                                        <connections>
-                                            <action selector="searchPressed" destination="A33-W0-5vL" eventType="touchUpInside" id="LVo-sL-oHQ"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.77461398920000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XTw-Hs-Xhg">
-                                <rect key="frame" x="0.0" y="90" width="320" height="429"/>
+                                <rect key="frame" x="0.0" y="134" width="320" height="386"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vSc-su-ZHJ">
@@ -87,7 +79,7 @@
                                         <color key="backgroundColor" red="0.0" green="0.77461398920000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="imageView" destination="2XZ-Fd-6vw" id="Z9S-De-jNa"/>
-                                            <outlet property="label" destination="ef1-pl-9p8" id="3Py-Cb-MDj"/>
+                                            <outlet property="label" destination="ef1-pl-9p8" id="EuP-zl-7nh"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -96,11 +88,20 @@
                                     <outlet property="delegate" destination="A33-W0-5vL" id="ox9-9j-0Te"/>
                                 </connections>
                             </collectionView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Nombre, Clave, Especialidad" translatesAutoresizingMaskIntoConstraints="NO" id="1es-ae-YQa">
+                                <rect key="frame" x="0.0" y="90" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="A33-W0-5vL" id="OvW-ub-cIa"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Doctores" image="iconDoctores" id="eAr-2n-nsV"/>
                     <connections>
+                        <outlet property="searchBar" destination="1es-ae-YQa" id="l0C-1I-39W"/>
                         <outlet property="theCollectionView" destination="XTw-Hs-Xhg" id="AJF-GK-gzy"/>
                     </connections>
                 </viewController>
@@ -141,7 +142,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rdC-0N-vd7">
-                                <rect key="frame" x="0.0" y="90" width="320" height="429"/>
+                                <rect key="frame" x="0.0" y="134" width="320" height="386"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RtV-Mp-rl1">
@@ -182,7 +183,7 @@
                                         <color key="backgroundColor" red="0.0" green="0.77461398920000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="imageView" destination="euh-UP-Dtg" id="WvH-n8-GWh"/>
-                                            <outlet property="label" destination="mEw-1F-Hud" id="dOn-90-Ms4"/>
+                                            <outlet property="label" destination="mEw-1F-Hud" id="djo-Wm-eXX"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -191,14 +192,6 @@
                                     <outlet property="delegate" destination="C1P-1A-smd" id="OFy-7x-HSW"/>
                                 </connections>
                             </collectionView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Nombre, Clave" translatesAutoresizingMaskIntoConstraints="NO" id="0hB-aa-kXO">
-                                <rect key="frame" x="0.0" y="46" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="C1P-1A-smd" id="Pfv-IL-XQr"/>
-                                </connections>
-                            </searchBar>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KqD-XJ-nye">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -217,26 +210,23 @@
                                         </attributedString>
                                         <color key="highlightedColor" red="0.0" green="0.75189555249999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4Z-WY-f1x">
-                                        <rect key="frame" x="268" y="34" width="32" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" image="iconSearch">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="searchPRessed" destination="C1P-1A-smd" eventType="touchUpInside" id="gfj-v5-en0"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.77461398920000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Nombre, Clave" translatesAutoresizingMaskIntoConstraints="NO" id="aAY-VI-aBH">
+                                <rect key="frame" x="0.0" y="90" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="C1P-1A-smd" id="P58-Jp-zLM"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pacientes" image="iconPacientes" id="Nbl-Ap-cOm"/>
                     <connections>
-                        <outlet property="searchBar" destination="0hB-aa-kXO" id="vK9-Ou-Vs7"/>
+                        <outlet property="searchBar" destination="aAY-VI-aBH" id="RUz-U7-lop"/>
                         <outlet property="theCollectionView" destination="rdC-0N-vd7" id="NP8-TX-Zyx"/>
                     </connections>
                 </viewController>
@@ -316,7 +306,6 @@
         <image name="iconAnalisis" width="32" height="32"/>
         <image name="iconDoctores" width="32" height="32"/>
         <image name="iconPacientes" width="32" height="32"/>
-        <image name="iconSearch" width="32" height="32"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
