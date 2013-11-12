@@ -50,7 +50,7 @@
 
 -(ActionsClient *)getServer{
     if(!_server){
-        _transport = [[TSocketClient alloc] initWithHostname:@"127.0.0.1" port:7911];
+        _transport = [[TSocketClient alloc] initWithHostname:@"192.168.0.103" port:7911];
         _protocol = [[TBinaryProtocol alloc] initWithTransport:_transport strictRead:YES strictWrite:YES];
         _server = [[ActionsClient alloc] initWithProtocol:_protocol];
     }

@@ -126,11 +126,13 @@
                                                            delegate:nil
                                                   cancelButtonTitle:@"Regresar"
                                                   otherButtonTitles:nil];
-        
         @try{
             switch (_reportType) {
                 case rAnalisisPaciente:
                     _clavePaciente = [[alertView textFieldAtIndex:0] text];
+                    _server = [(AppDelegate *)[[UIApplication sharedApplication] delegate] getServer];
+                    _reports = [_server generarReporteAnalisisPaciente:_clavePaciente];
+                    [(AppDelegate *)[[UIApplication sharedApplication] delegate] closeServer];
                     if(_reports.count == 0) [noReports show];
                     else [self performSegueWithIdentifier:@"modalToReport" sender:self];
                     break;
